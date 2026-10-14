@@ -143,7 +143,7 @@ function updateCentre(){const b=BASE_VERBS[verb],t=FLASH_UI[language];$('centre-
 function flipCentre(){centreFlipped=!centreFlipped;updateCentre();}
 
 
-const WELCOME_UI={en:{kicker:'WELCOME TO EARENDEL’S PIERIAN SPRING',tagline:['A small Box.','A boundless world.'],description:['Follow a particle. Open a door to meaning.','Let curiosity carry you into the unknown.'],begin:'Begin your journey',back:'← Welcome',signature:'THE DOORS AND WINDOWS OF ENGLISH'},zh:{kicker:'欢迎来到 EARENDEL’S PIERIAN SPRING',tagline:['小小的 Box。','无尽的意义世界。'],description:['跟随一个小词，推开意义之门。','让好奇心带你走进未知。'],begin:'开启你的旅程',back:'← 欢迎页',signature:'英语世界的门与窗'},ja:{kicker:'EARENDEL’S PIERIAN SPRING へようこそ',tagline:['小さなBox。','果てしない意味の世界。'],description:['小さな語をたどり、意味の扉を開こう。','好奇心に導かれて、未知の世界へ。'],begin:'旅を始める',back:'← Welcomeへ',signature:'英語の世界のドアと窓'}};
+const WELCOME_UI={en:{kicker:'WELCOME TO EARENDEL’S PIERIAN SPRING',tagline:['A small Box.','A boundless world.'],description:['Follow a particle. Open a door to meaning.','Let curiosity carry you into the unknown.'],begin:'Begin your journey',back:'← Welcome',signature:'THE DOORS AND WINDOWS OF ENGLISH'},zh:{kicker:'欢迎来到 EARENDEL’S PIERIAN SPRING',tagline:['小小的 Box。','无尽的意义世界。'],description:['跟随一个小词，推开意义之门。','让好奇心带你走进未知。'],begin:'开始你的征程吧',back:'← 欢迎页',signature:'英语世界的门与窗'},ja:{kicker:'EARENDEL’S PIERIAN SPRING へようこそ',tagline:['小さなBox。','果てしない意味の世界。'],description:['小さな語をたどり、意味の扉を開こう。','好奇心に導かれて、未知の世界へ。'],begin:'旅を始めましょう',back:'← Welcomeへ',signature:'英語の世界のドアと窓'}};
 function renderWelcome(){const t=WELCOME_UI[language];$('welcome-kicker').textContent=t.kicker;$('welcome-tagline').innerHTML=t.tagline.map(escapeHTML).join('<br>');$('welcome-description').innerHTML=t.description.map(escapeHTML).join('<br>');$('welcome-begin-label').textContent=t.begin;$('welcome-return').textContent=t.back;$('welcome-signature').textContent=t.signature;}
 function showWelcome(show){$('welcome-view').classList.toggle('hidden',!show);$('learning-workspace').classList.toggle('hidden',show);document.body.classList.toggle('welcome-active',show);if(!show){$(mode==='quiz'?'quiz-tab':'explore-tab').focus();}else $('welcome-begin').focus();window.scrollTo?.({top:0,behavior:'instant'});}
 
@@ -249,7 +249,7 @@ let brandIndex=0;const brandTitles=['KING of phrasal verbs','短语动词达人'
 function renderWelcomeControls(){
  if(currentPage!=='welcome')return;
  const languages=['en','zh','ja','ko','de'],lang=languages[brandIndex];
- const begins=['Begin your journey','开始你的旅程','旅を始める','여정 시작하기','Beginne deine Reise'];
+ const begins=['Begin your journey','开始你的征程吧','旅を始めましょう','여정 시작하기','Beginne deine Reise'];
  const helps=['Help ?','帮助 ?','ヘルプ ?','도움말 ?','Hilfe ?'];
  $('welcome-begin-label').textContent=begins[brandIndex];$('welcome-begin').lang=lang;
  $('help-button').textContent=helps[brandIndex];$('help-button').lang=lang;
